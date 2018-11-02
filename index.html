@@ -34,6 +34,18 @@
         }
     </style>
     <script>
+	function createRow(){
+		var table = document.getElementById("myTable");
+    		var row = table.insertRow(0);
+    		var cell1 = row.insertCell(0);
+    		var cell2 = row.insertCell(1);
+    		cell1.innerHTML = "NEW CELL1";
+    		cell2.innerHTML = "NEW CELL2";
+	}
+	   function userInput() {
+    		var input = document.getElementById("hour").value;
+		return input;
+	   } 
 	    function cal(hours) {
 		    if (hours < 0) {
 			    return "No more employee to enter";
@@ -46,8 +58,7 @@
 		    }
 	    }
 	    document.writeln(cal(-1));
-
-		    
+	   
     </script>
 </head>
 
@@ -55,52 +66,17 @@
 
     <form>
         <div class="boxed">
-            Enter Hours: <input type="text" name="FirstName" value="Mickey"><br>
+            Enter Hours: <input type="text" id = "hour"><br>
             Click to Submit
-            <input type="submit" value="Submit">
-
+            <input type="submit"  onclick="createRow()">
         </div>
     </form>
+	<button onclick="createRow()">Try it</button>
 
 
     <h2>HTML Table</h2>
 
-    <table>
-        <tr>
-            <th>Employees</th>
-            <th># of Hours Worked</th>
-            <th>Pay</th>
-        </tr>
-        <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
-        </tr>
-        <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-            <td>Mexico</td>
-        </tr>
-        <tr>
-            <td>Ernst Handel</td>
-            <td>Roland Mendel</td>
-            <td>Austria</td>
-        </tr>
-        <tr>
-            <td>Island Trading</td>
-            <td>Helen Bennett</td>
-            <td>UK</td>
-        </tr>
-        <tr>
-            <td>Laughing Bacchus Winecellars</td>
-            <td>Yoshi Tannamuri</td>
-            <td>Canada</td>
-        </tr>
-        <tr>
-            <td>Magazzini Alimentari Riuniti</td>
-            <td>Giovanni Rovelli</td>
-            <td>Italy</td>
-        </tr>
+    <table id="myTable">
     </table>
 
 </body>
